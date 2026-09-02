@@ -1,30 +1,37 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+
 const services = [
   {
     title: "Process Audits",
+    href: "/services/process-audits",
     body: "We dissect operational workflows to find inefficiencies, redundancies, and control gaps before they become financial losses.",
-    featured: true,
     tone: "featured" as const,
   },
   {
     title: "Financial Audits",
+    href: "/services/financial-audits",
     body: "Rigorous examination of financial records for transparency, accuracy, and stakeholder trust.",
     tone: "light" as const,
   },
   {
     title: "Risk Management Advisory",
+    href: "/services/risk-management-advisory",
     body: "Proactive identification and mitigation of strategic, operational, and financial risks for your landscape.",
     tone: "primary" as const,
   },
   {
     title: "Compliance Advisory",
+    href: "/services/compliance-advisory",
     body: "Navigate local and international standards with confidence and clear operational alignment.",
     tone: "light" as const,
   },
   {
     title: "Policy & SOP Development",
+    href: "/services/policy-sop-development",
     body: "Bespoke procedures that institutionalize best practice and protect institutional memory.",
     tone: "light" as const,
   },
@@ -37,7 +44,7 @@ export function HomeServicesPreview() {
       aria-labelledby="services-heading"
     >
       <Container>
-        <div className="mx-auto mb-16 max-w-2xl text-center lg:mb-20">
+        <div className="mx-auto mb-14 max-w-2xl text-center lg:mb-16">
           <h2
             id="services-heading"
             className="font-display mb-4 text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-tight text-on-surface"
@@ -60,9 +67,6 @@ export function HomeServicesPreview() {
                 >
                   <div className="relative z-10 flex h-full flex-col justify-between gap-8">
                     <div>
-                      <p className="mb-5 inline-block rounded-full bg-primary-fixed px-3 py-1 font-sans text-xs font-semibold tracking-[0.05em] text-primary-container">
-                        Core focus
-                      </p>
                       <h3 className="font-display mb-3 text-2xl font-semibold text-on-surface">
                         {service.title}
                       </h3>
@@ -71,10 +75,10 @@ export function HomeServicesPreview() {
                       </p>
                     </div>
                     <Link
-                      href="/services"
-                      className="inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary transition-colors duration-300 group-hover:text-secondary"
+                      href={service.href}
+                      className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary transition-colors duration-300 group-hover:text-secondary ${focusRing}`}
                     >
-                      View all services
+                      Explore process audits
                       <span
                         aria-hidden
                         className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
@@ -97,13 +101,22 @@ export function HomeServicesPreview() {
                     aria-hidden
                     className="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_oklab,white_10%,transparent),transparent)]"
                   />
-                  <div className="relative z-10">
-                    <h3 className="font-display mb-3 text-2xl font-semibold">
-                      {service.title}
-                    </h3>
-                    <p className="font-sans text-base leading-relaxed text-on-primary/80">
-                      {service.body}
-                    </p>
+                  <div className="relative z-10 flex h-full flex-col justify-between gap-8">
+                    <div>
+                      <h3 className="font-display mb-3 text-2xl font-semibold">
+                        {service.title}
+                      </h3>
+                      <p className="font-sans text-base leading-relaxed text-on-primary/80">
+                        {service.body}
+                      </p>
+                    </div>
+                    <Link
+                      href={service.href}
+                      className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-secondary-fixed transition-colors duration-300 hover:text-secondary-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-fixed`}
+                    >
+                      Learn more
+                      <span aria-hidden>→</span>
+                    </Link>
                   </div>
                 </article>
               );
@@ -122,6 +135,13 @@ export function HomeServicesPreview() {
                     {service.body}
                   </p>
                 </div>
+                <Link
+                  href={service.href}
+                  className={`mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:text-secondary ${focusRing}`}
+                >
+                  Learn more
+                  <span aria-hidden>→</span>
+                </Link>
               </article>
             );
           })}
@@ -130,7 +150,7 @@ export function HomeServicesPreview() {
         <div className="mt-12 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-lg border border-primary-container px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:bg-primary-fixed"
+            className={`inline-flex min-h-12 items-center justify-center rounded-lg border border-primary-container px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:bg-primary-fixed ${focusRing}`}
           >
             Explore the full service suite
           </Link>

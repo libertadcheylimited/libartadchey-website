@@ -33,9 +33,6 @@ export function HomeSectors() {
       <Container className="relative z-10">
         <div className="mb-10 flex flex-col items-start justify-between gap-6 border-b border-outline-variant/25 pb-8 lg:mb-12 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-3 font-sans text-sm font-semibold uppercase tracking-[0.12em] text-secondary-fixed">
-              Our domain
-            </p>
             <h2
               id="sectors-heading"
               className="font-display max-w-xl text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-tight"

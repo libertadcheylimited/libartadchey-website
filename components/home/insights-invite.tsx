@@ -38,13 +38,13 @@ export function HomeInsightsInvite() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/insights"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-on-primary transition-[filter] duration-300 hover:brightness-110"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-on-primary transition-[filter] duration-300 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Read insights
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container shadow-[inset_0_0_0_1px_currentColor] transition-colors duration-300 hover:bg-surface"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg px-6 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container shadow-[inset_0_0_0_1px_currentColor] transition-colors duration-300 hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Book a consultation
               </Link>

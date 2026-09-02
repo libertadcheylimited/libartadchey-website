@@ -2,9 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 
+const credentials = ["ACA", "CIA", "ISO 31000"] as const;
+
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+
 export function HomeFounder() {
   return (
-    <section className="bg-background py-20 lg:py-[7.5rem]" aria-labelledby="founder-heading">
+    <section
+      className="bg-background py-20 lg:py-[7.5rem]"
+      aria-labelledby="founder-heading"
+    >
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="relative lg:col-span-5">
@@ -33,9 +41,6 @@ export function HomeFounder() {
           </div>
 
           <div className="flex flex-col gap-5 lg:col-span-6 lg:col-start-7">
-            <p className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-              Founder spotlight
-            </p>
             <h2
               id="founder-heading"
               className="font-display text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-tight text-on-background"
@@ -46,6 +51,19 @@ export function HomeFounder() {
               aria-hidden
               className="h-1 w-16 rounded-full bg-secondary-fixed"
             />
+            <p className="font-sans text-xs font-medium uppercase tracking-[0.16em] text-on-surface-variant">
+              Founder &amp; Principal Advisor
+            </p>
+            <ul className="flex flex-wrap gap-2" aria-label="Credentials">
+              {credentials.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full bg-primary-fixed px-3.5 py-1.5 font-sans text-sm font-semibold tracking-[0.04em] text-on-primary-fixed"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
             <p className="max-w-[58ch] font-sans text-lg leading-relaxed text-on-surface-variant">
               At Libertad Chey, we do not just point out problems; we architect
               resilience. With a foundation built in Big 4 environments, the
@@ -57,13 +75,10 @@ export function HomeFounder() {
               bureaucratic noise to deliver actionable intelligence that
               protects the bottom line and fuels sustainable growth.
             </p>
-            <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-              <p className="font-sans text-xs font-medium uppercase tracking-[0.16em] text-on-surface-variant">
-                Founder &amp; Principal Advisor
-              </p>
+            <div className="mt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:text-secondary"
+                className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:text-secondary ${focusRing}`}
               >
                 Meet the founder
                 <span aria-hidden>→</span>

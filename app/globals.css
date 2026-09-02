@@ -147,6 +147,11 @@
     font-family: var(--font-jakarta), system-ui, sans-serif;
   }
 
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 22%, white);
+    color: var(--on-primary-fixed);
+  }
+
   h1,
   h2,
   h3,
