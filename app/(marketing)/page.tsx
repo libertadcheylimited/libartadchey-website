@@ -7,9 +7,9 @@ import { HomeServicesPreview } from "@/components/home/services-preview";
 import "@/components/home/home.css";
 
 export const metadata: Metadata = {
-  title: "Boutique risk & audit consultancy",
+  title: "Founder-led risk & audit consultancy",
   description:
-    "Libertad Chey Ltd is a founder-led risk and audit consultancy. Process audits, financial audits, and risk advisory. Book a consultation.",
+    "Libertad Chey is a founder-led risk and audit consultancy. Process audits, financial audits, and risk advisory. Book a consultation.",
 };
 
 export default function HomePage() {

@@ -1,13 +1,11 @@
 export const siteConfig = {
-  name: "Libertad Chey Ltd",
+  name: "Libertad Chey",
   shortName: "Libertad Chey",
   description:
-    "Boutique risk and audit consultancy. Founder-led process audits, financial audits, and risk management advisory.",
-  email: "uchemaduka98@gmail.com",
-  phone: "+234 706 389 2787",
-  phoneHref: "tel:+2347063892787",
-  linkedin: "https://linkedin.com/in/uche-maduka-cia-a24867207",
-  location: "Lagos, Nigeria",
+    "Founder-led risk and audit consultancy. Process audits, financial audits, and risk management advisory.",
+  email: "info@libertadchey.com",
+  linkedin: "https://www.linkedin.com/in/uche-maduka-cia-aca-m-sc-a24867207/",
+  location: "Mulliner Towers, Alfred Rewane, Ikoyi, Lagos, Nigeria",
 } as const;
 
 export const mainNav = [

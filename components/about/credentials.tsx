@@ -19,11 +19,7 @@ const credentials = [
   },
   {
     title: "MSc, Information Resources Management",
-    org: "Ahmadu Bello University · Grade 4.76",
-  },
-  {
-    title: "BSc, Accounting",
-    org: "University of Lagos",
+    org: "Ahmadu Bello University · Distinction",
   },
 ] as const;
 
@@ -40,8 +36,8 @@ export function Credentials() {
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-on-surface-variant sm:text-lg">
             CIA, ACA, ISO 31000, ISO 9001:2015, plus an MSc in information
-            management and a BSc in accounting: each credential covers a
-            different layer of organisational risk.
+            management: each credential covers a different layer of
+            organisational risk.
           </p>
         </div>
 

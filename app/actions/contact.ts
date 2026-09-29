@@ -92,7 +92,7 @@ export async function submitEnquiry(
   const to = process.env.CONTACT_TO_EMAIL ?? siteConfig.email;
   const from =
     process.env.RESEND_FROM_EMAIL ??
-    "Libertad Chey Ltd <onboarding@resend.dev>";
+    "Libertad Chey <onboarding@resend.dev>";
 
   if (!apiKey) {
     console.info(

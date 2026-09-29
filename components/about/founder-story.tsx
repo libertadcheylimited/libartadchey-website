@@ -12,10 +12,10 @@ export function FounderStory() {
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="about-reveal lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-high">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-high shadow-md">
               <Image
                 src="/brand/uche-maduka.jpg"
-                alt="Uche Maduka, Founder of Libertad Chey Ltd"
+                alt="Uchechukwu Maduka, Founder of Libertad Chey"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover object-[center_18%]"
@@ -25,6 +25,25 @@ export function FounderStory() {
                 aria-hidden
                 className="absolute bottom-0 left-0 right-0 h-1.5 bg-secondary-container"
               />
+            </div>
+            <div className="mt-4 rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-4 text-center sm:text-left">
+              <h3 className="font-display text-xl font-bold text-primary">
+                Uchechukwu (Uche) Maduka
+              </h3>
+              <p className="mt-0.5 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant">
+                Founder &amp; Principal Advisor
+              </p>
+              <div className="mt-2.5 flex flex-wrap justify-center gap-1.5 sm:justify-start">
+                <span className="rounded-full bg-primary-fixed px-2.5 py-0.5 font-sans text-xs font-semibold text-on-primary-fixed">
+                  ACA
+                </span>
+                <span className="rounded-full bg-primary-fixed px-2.5 py-0.5 font-sans text-xs font-semibold text-on-primary-fixed">
+                  CIA
+                </span>
+                <span className="rounded-full bg-secondary-fixed px-2.5 py-0.5 font-sans text-xs font-semibold text-on-secondary-fixed">
+                  ISO 31000
+                </span>
+              </div>
             </div>
           </div>
 

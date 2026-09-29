@@ -1,11 +1,10 @@
-/**
- * Static Insights content stub.
- *
- * CMS note: Swap this module for Sanity (or similar) later.
- * Keep `InsightPost` as the contract so listing/detail components stay stable.
- * Fields map roughly to: title, slug, excerpt, category, author, publishedAt,
- * readingMinutes, featured, body (Portable Text → string[] or rich blocks).
- */
+import { sanityClient } from "@/lib/sanity/client";
+import {
+  allPostsQuery,
+  featuredPostQuery,
+  postBySlugQuery,
+  postsByCategoryQuery,
+} from "@/lib/sanity/queries";
 
 export const insightCategories = [
   "Process Audits",
@@ -17,6 +16,7 @@ export const insightCategories = [
 export type InsightCategory = (typeof insightCategories)[number];
 
 export type InsightPost = {
+  _id?: string;
   slug: string;
   title: string;
   excerpt: string;
@@ -26,18 +26,22 @@ export type InsightPost = {
   publishedAt: string;
   readingMinutes: number;
   featured?: boolean;
-  /** Plain paragraphs for long-form sample copy. Replace with CMS rich text. */
-  body: string[];
+  /** Plain paragraphs for sample copy or Portable Text block array from Sanity */
+  body: string[] | any[];
   /** Marks placeholder content the client will replace post-launch. */
-  isSample: true;
+  isSample?: boolean;
+  mainImage?: {
+    asset?: { _ref: string };
+    alt?: string;
+  };
 };
 
 const AUTHOR = "Uchechukwu Maduka";
 
 /**
- * Sample posts only. Tone matches boutique audit/risk voice;
- * titles and body are clearly draft-quality for client rewrite.
- */
+  * Sample posts fallback. Tone matches boutique audit/risk voice;
+  * titles and body are draft-quality for client rewrite.
+  */
 export const insightPosts: InsightPost[] = [
   {
     slug: "risk-as-architecture-not-checklist",
@@ -114,18 +118,59 @@ export const insightPosts: InsightPost[] = [
   },
 ];
 
-export function getInsightBySlug(slug: string): InsightPost | undefined {
+export async function getAllInsights(): Promise<InsightPost[]> {
+  try {
+    const posts = await sanityClient.fetch<InsightPost[]>(allPostsQuery);
+    if (posts && posts.length > 0) {
+      return posts;
+    }
+  } catch (error) {
+    console.warn("Sanity fetch warning (using static fallback posts):", error);
+  }
+  return insightPosts;
+}
+
+export async function getInsightBySlug(
+  slug: string,
+): Promise<InsightPost | undefined> {
+  try {
+    const post = await sanityClient.fetch<InsightPost | null>(postBySlugQuery, {
+      slug,
+    });
+    if (post) return post;
+  } catch (error) {
+    console.warn("Sanity fetch warning (using static fallback):", error);
+  }
   return insightPosts.find((post) => post.slug === slug);
 }
 
-export function getFeaturedInsight(): InsightPost {
+export async function getFeaturedInsight(): Promise<InsightPost> {
+  try {
+    const post = await sanityClient.fetch<InsightPost | null>(
+      featuredPostQuery,
+    );
+    if (post) return post;
+    const all = await getAllInsights();
+    if (all.length > 0) return all[0];
+  } catch (error) {
+    console.warn("Sanity fetch warning (using static fallback):", error);
+  }
   return insightPosts.find((post) => post.featured) ?? insightPosts[0];
 }
 
-export function getInsightsByCategory(
+export async function getInsightsByCategory(
   category: InsightCategory | "all",
-): InsightPost[] {
-  if (category === "all") return insightPosts;
+): Promise<InsightPost[]> {
+  if (category === "all") return getAllInsights();
+  try {
+    const posts = await sanityClient.fetch<InsightPost[]>(
+      postsByCategoryQuery,
+      { category },
+    );
+    if (posts && posts.length > 0) return posts;
+  } catch (error) {
+    console.warn("Sanity fetch warning (using static fallback):", error);
+  }
   return insightPosts.filter((post) => post.category === category);
 }
 

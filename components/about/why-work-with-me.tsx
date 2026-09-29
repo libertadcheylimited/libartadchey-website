@@ -22,7 +22,7 @@ export function WhyWorkWithMe() {
               Senior attention, root-cause focus
             </h2>
             <p className="mt-4 max-w-[36ch] font-sans text-base leading-relaxed text-on-surface-variant sm:text-lg">
-              Boutique means you work with me directly. The goal is not a
+              Founder-led means you work with me directly. The goal is not a
               polished binder; it is a stronger operating position.
             </p>
           </div>

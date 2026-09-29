@@ -12,7 +12,7 @@ Decision-makers at organisations of any size (startups, SMEs, NGOs, churches, an
 
 ## Product Purpose
 
-Libertad Chey Ltd is a boutique risk and audit consultancy founded by Uchechukwu (Uche) Maduka (ACA, CIA, ISO 31000). The marketing site is the firm's public presence: establish trust in founder-led expertise, explain services (process audits, financial audits, risk management, compliance, policy/SOP development), and convert visitors primarily into booked consultation calls. Secondary goals: enquiry form submissions, reading insights, and newsletter signup. No pricing on-site, no auth, no client portals.
+Libertad Chey is a risk and audit consultancy founded by Uchechukwu (Uche) Maduka (ACA, CIA, ISO 31000). The marketing site is the firm's public presence: establish trust in founder-led expertise, explain services (process audits, financial audits, risk management, compliance, policy/SOP development), and convert visitors primarily into booked consultation calls. Secondary goals: enquiry form submissions, reading insights, and newsletter signup. No pricing on-site, no auth, no client portals.
 
 Source of truth for scope and requirements: `libartadtachey-website-questionnaire..pdf`. Future product work must not stray from that brief.
 
@@ -24,7 +24,7 @@ Founder-led root-cause consultancy: every engagement is handled personally by a 
 
 - Engagement starts with a consultation call; pricing is project-based and agreed after that conversation (never shown on the site).
 - Regulatory framing includes applicable Nigerian requirements (e.g. CAMA) and sector-specific rules, plus IFRS-aligned financial audit work where relevant.
-- Contact and booking: Calendly (or equivalent) for scheduling; enquiry form for inbound leads; email/phone/LinkedIn published for direct contact (Lagos, Nigeria).
+- Contact and booking: Calendly (or equivalent) for scheduling; enquiry form for inbound leads; email/LinkedIn published for direct contact (Mulliner Towers, Alfred Rewane, Ikoyi, Lagos, Nigeria).
 - Insights/blog and downloadable tips are part of the funnel; client writes posts after launch. Newsletter signup is a secondary path.
 - Planned integrations (partially wired): Calendly embed, transactional enquiry email, newsletter tool, basic analytics, CMS for publishing insights.
 
@@ -44,7 +44,7 @@ Founder-led root-cause consultancy: every engagement is handled personally by a 
 
 ## Brand Commitments
 
-- **Name:** Libertad Chey Ltd (short: Libertad Chey). Logo: purple shield with gold "LC" and wordmark (`public/brand/logo.png`).
+- **Name:** Libertad Chey. Logo: purple shield with gold "LC" and wordmark (`public/brand/logo.png`).
 - **Founder:** Uchechukwu (Uche) Maduka; credentials include ACA, CIA, ISO 31000 (ISO 9001:2015 also appears in profile materials). Headshot provided for About/profile use (`public/brand/uche-maduka.jpg`).
 - **Voice:** Warm, personal, approachable, credible, authoritative. Conversational and direct without Big 4 stiffness. Human enough that visitors feel they will work with a real person who cares about outcomes.
 - **Emotional goals:** secured trust, sophisticated intelligence, approachable exclusivity.

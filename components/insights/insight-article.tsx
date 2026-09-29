@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 import { InsightsConsultationCta } from "@/components/insights/consultation-cta";
 import { NewsletterSignup } from "@/components/insights/newsletter-signup";
 import { Container } from "@/components/container";
@@ -12,6 +13,13 @@ type InsightArticleProps = {
 };
 
 export function InsightArticle({ post }: InsightArticleProps) {
+  const isPortableText =
+    Array.isArray(post.body) &&
+    post.body.length > 0 &&
+    typeof post.body[0] === "object" &&
+    post.body[0] !== null &&
+    "_type" in post.body[0];
+
   return (
     <article>
       <header className="border-b border-outline-variant/60 bg-surface-container py-[var(--section-padding)]">
@@ -56,17 +64,22 @@ export function InsightArticle({ post }: InsightArticleProps) {
       <Container className="py-[var(--section-padding)]">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
           <div className="max-w-[70ch]">
-            <div className="space-y-6 font-sans text-lg leading-[1.7] text-on-surface [&_p]:max-w-[70ch]">
-              {post.body.map((paragraph, index) => (
-                <p key={`${post.slug}-${index}`}>{paragraph}</p>
-              ))}
+            <div className="space-y-6 font-sans text-lg leading-[1.7] text-on-surface [&_p]:max-w-[70ch] [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3 [&_blockquote]:border-l-4 [&_blockquote]:border-brand-gold [&_blockquote]:pl-4 [&_blockquote]:italic [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
+              {isPortableText ? (
+                <PortableText value={post.body} />
+              ) : (
+                (post.body as string[]).map((paragraph, index) => (
+                  <p key={`${post.slug}-${index}`}>{paragraph}</p>
+                ))
+              )}
             </div>
 
-            <p className="mt-10 rounded-lg bg-surface-container px-4 py-3 font-sans text-sm leading-relaxed text-on-surface-variant">
-              This is sample copy for layout and voice. Replace via Sanity (or
-              your CMS) when real articles are ready. Keep the slug if you want
-              the URL to stay stable.
-            </p>
+            {post.isSample ? (
+              <p className="mt-10 rounded-lg bg-surface-container px-4 py-3 font-sans text-sm leading-relaxed text-on-surface-variant">
+                This is sample copy for layout and voice. Managing insights via
+                Sanity CMS allows updating articles seamlessly without code redeploys.
+              </p>
+            ) : null}
 
             <div className="mt-12">
               <InsightsConsultationCta />

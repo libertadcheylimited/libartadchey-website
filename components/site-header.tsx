@@ -86,7 +86,7 @@ export function SiteHeader() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-on-primary/30 text-on-primary lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-on-primary/30 text-on-primary lg:hidden"
             aria-expanded={open}
             aria-controls={panelId}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -95,13 +95,13 @@ export function SiteHeader() {
             <span className="sr-only">{open ? "Close" : "Menu"}</span>
             <span aria-hidden className="flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 w-5 bg-current transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+                className={`block h-0.5 w-5 bg-current transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""}`}
               />
               <span
-                className={`block h-0.5 w-5 bg-current transition-opacity ${open ? "opacity-0" : ""}`}
+                className={`block h-0.5 w-5 bg-current transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
               />
               <span
-                className={`block h-0.5 w-5 bg-current transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+                className={`block h-0.5 w-5 bg-current transition-transform duration-200 ${open ? "-translate-y-2 -rotate-45" : ""}`}
               />
             </span>
           </button>
@@ -113,16 +113,16 @@ export function SiteHeader() {
           id={panelId}
           className="border-t border-on-primary/15 bg-primary lg:hidden"
         >
-          <Container className="flex flex-col gap-1 py-4">
+          <Container className="flex flex-col gap-1.5 py-4">
             {mainNav.map((item) => {
               const active = linkIsActive(pathname, item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-lg px-3 py-3 font-sans text-sm font-semibold tracking-[0.05em] ${
+                  className={`flex min-h-[44px] items-center rounded-lg px-4 font-sans text-sm font-semibold tracking-[0.05em] transition-colors ${
                     active
-                      ? "bg-primary-container text-secondary-fixed"
+                      ? "bg-primary-container text-secondary-fixed shadow-inner"
                       : "text-on-primary hover:bg-primary-container/60"
                   }`}
                 >
@@ -132,7 +132,7 @@ export function SiteHeader() {
             })}
             <Link
               href={primaryCta.href}
-              className="mt-2 inline-flex items-center justify-center rounded-lg bg-secondary-container px-5 py-3 font-sans text-sm font-semibold tracking-[0.05em] text-on-secondary-container"
+              className="mt-2 flex min-h-[44px] items-center justify-center rounded-lg bg-secondary-container px-5 font-sans text-sm font-semibold tracking-[0.05em] text-on-secondary-container transition-[filter] hover:brightness-105"
             >
               {primaryCta.label}
             </Link>

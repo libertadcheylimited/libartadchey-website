@@ -19,7 +19,7 @@ export function SiteFooter() {
               className="mb-4 h-12 w-12 object-contain"
             />
             <p className="font-sans text-base leading-relaxed text-on-surface-variant">
-              Boutique risk and audit consultancy. Founder-led expertise for
+              Risk and audit consultancy. Founder-led expertise for
               organisations that want gaps found before they reach the
               financials.
             </p>
@@ -53,14 +53,11 @@ export function SiteFooter() {
             <div className="flex flex-col gap-2 font-sans text-base text-on-surface-variant">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="hover:text-primary"
+                className="hover:text-primary transition-colors"
               >
                 {siteConfig.email}
               </a>
-              <a href={siteConfig.phoneHref} className="hover:text-primary">
-                {siteConfig.phone}
-              </a>
-              <span>{siteConfig.location}</span>
+              <span className="leading-snug">{siteConfig.location}</span>
             </div>
           </div>
 

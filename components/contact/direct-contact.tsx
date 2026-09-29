@@ -19,19 +19,6 @@ export function DirectContact() {
       <ul className="mt-4 flex flex-col gap-3">
         <li>
           <a
-            href={siteConfig.phoneHref}
-            className="flex w-fit items-center gap-3 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-secondary-container/40 focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-container"
-          >
-            <ContactIcon>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z" />
-              </svg>
-            </ContactIcon>
-            <span className="font-sans text-base">{siteConfig.phone}</span>
-          </a>
-        </li>
-        <li>
-          <a
             href={`mailto:${siteConfig.email}`}
             className="flex w-fit items-center gap-3 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-secondary-container/40 focus-visible:ring-offset-2 focus-visible:ring-offset-secondary-container"
           >

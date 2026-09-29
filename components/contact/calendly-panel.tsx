@@ -65,7 +65,7 @@ export function CalendlyPanel({ calendlyUrl }: CalendlyPanelProps) {
         </p>
         <p className="mt-2 font-sans text-base leading-relaxed text-on-surface-variant">
           Online booking will appear here once Calendly is connected. In the
-          meantime, send an enquiry or reach out by email or phone.
+          meantime, send an enquiry or reach out by email.
         </p>
       </div>
     </div>

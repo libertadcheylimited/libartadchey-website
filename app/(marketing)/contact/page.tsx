@@ -7,7 +7,7 @@ import { Container } from "@/components/container";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a consultation or send an enquiry to Libertad Chey Ltd. Founder-led risk and audit advisory.",
+    "Book a consultation or send an enquiry to Libertad Chey. Founder-led risk and audit advisory.",
 };
 
 export default function ContactPage() {

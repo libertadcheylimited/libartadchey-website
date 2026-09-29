@@ -188,7 +188,7 @@ export const services: Service[] = [
     suitedFor: [
       "Teams scaling beyond informal habits",
       "Organisations rebuilding after control failures",
-      "Leaders who want governance that matches boutique operations",
+      "Leaders who want governance that matches real-world operations",
     ],
     outcome:
       "Documents that encode how work should run, with ownership clear enough to stick.",

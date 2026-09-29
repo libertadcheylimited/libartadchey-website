@@ -10,7 +10,7 @@ import { WhyWorkWithMe } from "@/components/about/why-work-with-me";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Uchechukwu (Uche) Maduka, Founder of Libertad Chey Ltd. Big 4 experience, CIA, ACA, ISO 31000, and a founder-led approach to upstream risk and process work.",
+    "Meet Uchechukwu (Uche) Maduka, Founder of Libertad Chey. Big 4 experience, CIA, ACA, ISO 31000, and a founder-led approach to upstream risk and process work.",
 };
 
 export default function AboutPage() {

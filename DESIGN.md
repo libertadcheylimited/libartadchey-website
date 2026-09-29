@@ -1,6 +1,6 @@
 ---
-name: Libertad Chey Boutique
-description: Premium boutique consultancy aesthetic balancing authoritative expertise with human-centric warmth.
+name: Libertad Chey
+description: Premium risk and audit consultancy aesthetic balancing authoritative expertise with human-centric warmth.
 colors:
   surface: '#f8f9fa'
   surface-dim: '#d9dadb'

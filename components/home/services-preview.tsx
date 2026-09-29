@@ -63,10 +63,13 @@ export function HomeServicesPreview() {
               return (
                 <article
                   key={service.title}
-                  className="group relative overflow-hidden rounded-xl border-b-2 border-transparent bg-surface-container p-8 transition-[border-color,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-secondary-fixed hover:shadow-[0_12px_32px_rgba(25,28,29,0.06)] lg:col-span-2 lg:p-10"
+                  className="group relative overflow-hidden rounded-xl border-b-2 border-transparent bg-surface-container p-8 card-hover-lift hover:border-secondary-fixed hover:shadow-[0_16px_36px_rgba(25,28,29,0.08)] lg:col-span-2 lg:p-10"
                 >
                   <div className="relative z-10 flex h-full flex-col justify-between gap-8">
                     <div>
+                      <span className="mb-2 inline-block rounded-full bg-secondary-fixed/30 px-3 py-1 font-sans text-xs font-semibold tracking-wider uppercase text-on-secondary-container">
+                        Core Offering
+                      </span>
                       <h3 className="font-display mb-3 text-2xl font-semibold text-on-surface">
                         {service.title}
                       </h3>
@@ -81,7 +84,7 @@ export function HomeServicesPreview() {
                       Explore process audits
                       <span
                         aria-hidden
-                        className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
+                        className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
                       >
                         →
                       </span>
@@ -95,11 +98,11 @@ export function HomeServicesPreview() {
               return (
                 <article
                   key={service.title}
-                  className="relative overflow-hidden rounded-xl bg-primary p-8 text-on-primary"
+                  className="group relative overflow-hidden rounded-xl bg-primary p-8 text-on-primary card-hover-lift hover:shadow-[0_20px_40px_rgba(62,0,100,0.25)]"
                 >
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_oklab,white_10%,transparent),transparent)]"
+                    className="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_oklab,white_12%,transparent),transparent)]"
                   />
                   <div className="relative z-10 flex h-full flex-col justify-between gap-8">
                     <div>
@@ -112,10 +115,15 @@ export function HomeServicesPreview() {
                     </div>
                     <Link
                       href={service.href}
-                      className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-secondary-fixed transition-colors duration-300 hover:text-secondary-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-fixed`}
+                      className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-secondary-fixed transition-colors duration-300 group-hover:text-secondary-container ${focusRing}`}
                     >
                       Learn more
-                      <span aria-hidden>→</span>
+                      <span
+                        aria-hidden
+                        className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
+                      >
+                        →
+                      </span>
                     </Link>
                   </div>
                 </article>
@@ -125,7 +133,7 @@ export function HomeServicesPreview() {
             return (
               <article
                 key={service.title}
-                className="flex flex-col justify-between rounded-xl bg-surface p-8 shadow-[inset_0_0_0_1px_rgba(25,28,29,0.06)] transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface-container-low"
+                className="group flex flex-col justify-between rounded-xl bg-surface p-8 shadow-[inset_0_0_0_1px_rgba(25,28,29,0.06)] card-hover-lift hover:bg-surface-container-low hover:shadow-[0_12px_28px_rgba(25,28,29,0.06)]"
               >
                 <div>
                   <h3 className="font-display mb-3 text-2xl font-semibold text-on-surface">
@@ -137,10 +145,15 @@ export function HomeServicesPreview() {
                 </div>
                 <Link
                   href={service.href}
-                  className={`mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 hover:text-secondary ${focusRing}`}
+                  className={`mt-8 inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-[0.05em] text-primary-container transition-colors duration-300 group-hover:text-secondary ${focusRing}`}
                 >
                   Learn more
-                  <span aria-hidden>→</span>
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
+                  >
+                    →
+                  </span>
                 </Link>
               </article>
             );

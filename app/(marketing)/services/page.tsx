@@ -16,7 +16,7 @@ import { ServicesStickyNav } from "@/components/services/services-sticky-nav";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Process audits, financial audits, risk management, compliance advisory, and policy & SOP development from Libertad Chey Ltd.",
+    "Process audits, financial audits, risk management, compliance advisory, and policy & SOP development from Libertad Chey.",
 };
 
 export default function ServicesPage() {

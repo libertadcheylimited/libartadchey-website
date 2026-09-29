@@ -157,5 +157,28 @@
   h3,
   h4 {
     font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .fluid-heading-xl {
+    font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .fluid-heading-lg {
+    font-size: clamp(1.85rem, 3.8vw + 0.5rem, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .card-hover-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
   }
 }

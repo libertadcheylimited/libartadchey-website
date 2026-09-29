@@ -27,7 +27,7 @@ export function HomeFounder() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
                 src="/brand/uche-maduka.jpg"
-                alt="Uche Maduka, Founder of Libertad Chey Ltd"
+                alt="Uche Maduka, Founder of Libertad Chey"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover object-[center_18%]"

@@ -27,8 +27,7 @@ export function ServicesCta() {
         </h2>
         <p className="max-w-2xl font-sans text-lg leading-relaxed text-primary-fixed">
           Talk through your processes, controls, and compliance pressure with
-          the founder. Pricing is scoped after consultation; no rates are listed
-          on this site.
+          the founder.
         </p>
         <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
           <Link
