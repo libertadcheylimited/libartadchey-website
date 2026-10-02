@@ -106,7 +106,7 @@ export function HomeHero() {
 
             <p className="home-rise home-delay-3 max-w-[42ch] font-sans text-base leading-relaxed text-on-surface-variant sm:text-lg">
               Founder-led risk management, process audits, and compliance
-              advisory for startups, SMEs, corporates, NGOs, and churches.
+              advisory for startups, SMEs, corporates, and NGOs.
             </p>
 
             <div className="home-rise home-delay-4 flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
